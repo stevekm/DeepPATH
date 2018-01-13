@@ -25,3 +25,30 @@ RUN pip3.5 install -r /requirements.txt
 
 # install tcsh for compatibility
 RUN yum install -y tcsh
+
+# install CUDA - doesn't work
+# wget http://developer.download.nvidia.com/compute/cuda/repos/rhel6/x86_64/cuda-repo-rhel6-9.1.85-1.x86_64.rpm
+# rpm -i cuda-repo-rhel6-9.1.85-1.x86_64.rpm
+# yum clean all
+# yum install libvdpau
+# yum install dkms
+# yum install cuda
+# --> Processing Dependency: dkms for package: 1:nvidia-kmod-387.26-2.el6.x86_64
+# ---> Package xorg-x11-drv-nvidia-libs.x86_64 1:387.26-1.el6 will be installed
+# --> Processing Dependency: libvdpau(x86-64) >= 0.5 for package: 1:xorg-x11-drv-nvidia-libs-387.26-1.el6.x86_64
+# --> Finished Dependency Resolution
+# Error: Package: 1:xorg-x11-drv-nvidia-libs-387.26-1.el6.x86_64 (cuda)
+#            Requires: libvdpau(x86-64) >= 0.5
+# Error: Package: 1:nvidia-kmod-387.26-2.el6.x86_64 (cuda)
+#            Requires: dkms
+#  You could try using --skip-broken to work around the problem
+#  You could try running: rpm -Va --nofiles --nodigest
+# [
+
+
+# install TensorFlow
+# https://blog.abysm.org/2016/06/building-tensorflow-centos-6/
+# yum -y install java-1.8.0-openjdk-devel
+# wget https://github.com/bazelbuild/bazel/releases/download/0.8.1/bazel-0.8.1-dist.zip
+# unzip bazel-0.8.1-dist.zip -d bazel-0.8.1-dist
+# cd bazel-0.8.1-dist && ./compile.sh
