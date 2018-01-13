@@ -1,3 +1,4 @@
+# makefile to build the Docker image
 SHELL:=/bin/bash
 
 none:
